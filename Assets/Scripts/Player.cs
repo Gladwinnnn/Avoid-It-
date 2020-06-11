@@ -25,12 +25,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                if (cooldown == false)
-                {
-                    rigidbody2d.AddForce(new Vector2(0,10) * 50,ForceMode2D.Impulse);
-                    Invoke("ResetCooldown",0.4f);
-                    cooldown = true;
-                }
+                Jump();
             }
         }
 
@@ -42,6 +37,16 @@ public class Player : MonoBehaviour
                 Invoke("ResetCooldown",1f);
                 cooldown = true;
             }
+        }
+    }
+
+    public void Jump()
+    {
+        if (cooldown == false)
+        {
+            rigidbody2d.AddForce(new Vector2(0,10) * 50,ForceMode2D.Impulse);
+            Invoke("ResetCooldown",0.4f);
+            cooldown = true;
         }
     }
 

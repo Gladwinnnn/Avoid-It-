@@ -8,11 +8,7 @@ public class LevelLoader : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene("Game Scene");
-    }
-
-    public void LoadOption()
-    {
-        SceneManager.LoadScene("Option Scene");
+        Time.timeScale = 1;
     }
 
     public void Quit()
