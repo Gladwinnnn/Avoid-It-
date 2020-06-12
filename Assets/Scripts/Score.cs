@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField] int initialScore = 0;
+    int initialScore = 0;
     Text scoreDisplay;
     float Timer;
 
