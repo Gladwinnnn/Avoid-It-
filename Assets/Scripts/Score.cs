@@ -16,7 +16,6 @@ public class Score : MonoBehaviour
         Timer = 1;
     }
 
-
     void Update()
     {
         Timer -= Time.deltaTime;
