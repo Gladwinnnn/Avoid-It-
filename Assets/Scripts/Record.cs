@@ -6,18 +6,29 @@ using UnityEngine.UI;
 public class Record : MonoBehaviour
 {
     Text recordDisplay;
-    int recordScore = 0;
+    // int recordScore = 0;
+
+    // void Start()
+    // {
+    //     recordDisplay = GetComponent<Text>();
+    //     recordDisplay.text = GetInitialRecord().ToString();
+        
+    //     if (recordScore < PlayerPrefs.GetInt("Score"))
+    //     {
+    //         recordScore = PlayerPrefs.GetInt("Score");
+    //         recordDisplay.text = recordScore.ToString();
+    //     }
+    // }
 
     void Start()
     {
         recordDisplay = GetComponent<Text>();
         recordDisplay.text = GetInitialRecord().ToString();
-        
-        if (recordScore < PlayerPrefs.GetInt("Score"))
+        if (PlayerPrefs.GetInt("Record") < PlayerPrefs.GetInt("Score"))
         {
-            recordScore = PlayerPrefs.GetInt("Score");
-            recordDisplay.text = recordScore.ToString();
+            PlayerPrefs.SetInt("Record", PlayerPrefs.GetInt("Score"));
         }
+        recordDisplay.text = PlayerPrefs.GetInt("Record").ToString();
     }
 
     int GetInitialRecord()

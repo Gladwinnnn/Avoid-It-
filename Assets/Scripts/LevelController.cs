@@ -35,13 +35,7 @@ public class LevelController : MonoBehaviour
 
     public bool PlayerDead()
     {
-        if (playerDead)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        if (playerDead) { return true; }
+        else { return false; }
     }
 }
